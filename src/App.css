@@ -1,0 +1,31 @@
+* {
+  margin: 0px;
+}
+
+body {
+  background-color: #dfddde;
+}
+.logo-container {
+  display: flex;
+  justify-content: left;
+}
+.main-logo {
+  width: 150px;
+  padding: 10px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.main-image {
+  position: fixed;
+  bottom: 0px;
+}
+
+@media screen and (max-width: 480px) {
+  .main-image {
+    height: 700px;
+  }
+}
