@@ -1,14 +1,16 @@
 import guy from "../images/guy.png";
+import tattoo from "../images/test.png";
 import blacklogo from "../images/blacklogo.png";
 import background from "../images/flames.jpg";
 import Dropdown from "@/components/Dropdown";
+import whitelogo from "../images/whitelogo.png";
 
 function Test() {
   return (
     <div id="wrapper">
       <div className="logo-container">
         <img className="main-logo" src={blacklogo} alt="black logo" />
-        <Dropdown />
+        {/* <Dropdown /> */}
       </div>
       <div id="a" className="first-panel">
         <img src={guy} className="main-image" alt="image of a tattoed guy" />
@@ -26,7 +28,8 @@ function Test() {
           backgroundSize: "cover",
         }}
       >
-        <h1 style={{ color: "white" }}>I RAGAZZI</h1>
+        {/* <h1 style={{ color: "white" }}>I RAGAZZI</h1> */}
+        <img className="main-logo" src={whitelogo} alt="black logo" />
       </div>
       <div id="d" className="panels">
         Scrolling-Panel 3

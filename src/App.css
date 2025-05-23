@@ -9,10 +9,15 @@ body {
   font-family: sans-serif;
 }
 
+.dropdown-container {
+  display: flex;
+  justify-content: end;
+}
+
 /* LOGO SECTION */
 .logo-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
 }
 
 .main-logo {
@@ -76,6 +81,14 @@ body {
   background: rgb(255, 255, 255);
 }
 
+.navbar-container {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  justify-content: space-evenly;
+}
+
 /* === RESPONSIVE === */
 @media screen and (max-width: 480px) {
   .main-image {
@@ -89,5 +102,9 @@ body {
     height: auto;
     min-height: 100vh;
     flex-direction: row;
+  }
+
+  #c {
+    background-position: center;
   }
 }
