@@ -21,7 +21,7 @@ body {
 }
 
 .main-image {
-  max-width: 60%;
+  max-width: 40%;
   height: auto;
   object-fit: contain;
 }
@@ -57,7 +57,6 @@ body {
 
 /* PANEL STYLING */
 #a {
-  background: #eee;
   position: fixed;
   top: 0;
   left: 0;
@@ -66,7 +65,7 @@ body {
 
 #b {
   margin-top: 100vh;
-  background: rgb(152, 152, 152);
+  background: rgb(0, 0, 0);
 }
 
 #c {
@@ -80,8 +79,9 @@ body {
 /* === RESPONSIVE === */
 @media screen and (max-width: 480px) {
   .main-image {
+    max-width: 80%;
     height: auto;
-    max-height: 80vh;
+    object-fit: contain;
   }
 
   .panels {
