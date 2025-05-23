@@ -11,6 +11,9 @@ function Home() {
       <div className="image-container">
         <img src={test} className="main-image" alt="image of a tattoed guy" />
       </div>
+      <div className="image-container">
+        <img src={test} className="main-image" alt="image of a tattoed guy" />
+      </div>
     </>
   );
 }
