@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/sheet";
 
 import { TiThMenu } from "react-icons/ti";
+import { NavLink } from "react-router";
 
 function Dropdown() {
   return (
@@ -17,10 +18,11 @@ function Dropdown() {
       </SheetTrigger>
       <SheetContent style={{ height: "40vh" }}>
         <SheetHeader>
-          <SheetTitle></SheetTitle>
-          <SheetDescription style={{ fontSize: "50px" }}>
-            MESSI E ROLANDO ANDANDO HARD
-          </SheetDescription>
+          <NavLink to={"/"}>Home</NavLink>
+          <NavLink to={"/membership"}>Tesseramento</NavLink>
+          <NavLink to={"/events"}>Events</NavLink>
+          <NavLink to={"/contact"}>Contact</NavLink>
+          <SheetDescription></SheetDescription>
         </SheetHeader>
       </SheetContent>
     </Sheet>
