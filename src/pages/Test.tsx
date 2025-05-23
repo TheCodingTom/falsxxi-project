@@ -1,5 +1,6 @@
 import guy from "../images/guy.png";
 import blacklogo from "../images/blacklogo.png";
+import background from "../images/flames.jpg";
 import Dropdown from "@/components/Dropdown";
 
 function Test() {
@@ -17,8 +18,15 @@ function Test() {
         <h1 style={{ color: "white" }}>Stupido</h1>
       </div>
 
-      <div id="c" className="panels">
-        Scrolling-Panel 2
+      <div
+        id="c"
+        className="panels"
+        style={{
+          backgroundImage: `url(${background})`,
+          backgroundSize: "cover",
+        }}
+      >
+        <h1 style={{ color: "white" }}>I RAGAZZI</h1>
       </div>
       <div id="d" className="panels">
         Scrolling-Panel 3

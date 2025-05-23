@@ -7,16 +7,19 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
+import { TiThMenu } from "react-icons/ti";
+
 function Dropdown() {
   return (
     <Sheet>
-      <SheetTrigger>Open</SheetTrigger>
-      <SheetContent>
+      <SheetTrigger style={{ padding: "20px" }}>
+        <TiThMenu style={{ fontSize: "x-large" }} />
+      </SheetTrigger>
+      <SheetContent style={{ height: "40vh" }}>
         <SheetHeader>
-          <SheetTitle>Are you absolutely sure?</SheetTitle>
-          <SheetDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+          <SheetTitle></SheetTitle>
+          <SheetDescription style={{ fontSize: "50px" }}>
+            MESSI E ROLANDO ANDANDO HARD
           </SheetDescription>
         </SheetHeader>
       </SheetContent>
