@@ -13,31 +13,10 @@ import { NavLink } from "react-router";
 import blacklogo from "../images/blacklogo.png";
 import { useState } from "react";
 
-// const demoItems = [
-//   {
-//     link: "#",
-//     text: "Home",
-//     image: "https://picsum.photos/600/400?random=1",
-//   },
-//   {
-//     link: "#",
-//     text: "Tesseramento",
-//     image: "https://picsum.photos/600/400?random=2",
-//   },
-//   {
-//     link: "#",
-//     text: "Events",
-//     image: "https://picsum.photos/600/400?random=3",
-//   },
-//   {
-//     link: "#",
-//     text: "Contact",
-//     image: "https://picsum.photos/600/400?random=4",
-//   },
-// ];
+import "../styles/Dropdown.css";
 
 function Dropdown() {
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState(false);
 
   const toggleOpen = () => {
     setOpen((prev) => !prev);
@@ -53,34 +32,44 @@ function Dropdown() {
         </SheetTrigger>
         <SheetContent style={{ height: "40vh" }}>
           <div className="navbar-container">
-            <SheetTitle>
-              <NavLink onClick={toggleOpen} to={"/"}>
-                Statement
-              </NavLink>
-            </SheetTitle>
+            <div className="navbar-column">
+              <SheetTitle>
+                <NavLink className="navlink" onClick={toggleOpen} to={"/"}>
+                  1. Statement
+                </NavLink>
+              </SheetTitle>
 
-            <SheetTitle>
-              <NavLink onClick={toggleOpen} to={"/membership"}>
-                Tesseramento
-              </NavLink>
-            </SheetTitle>
+              <SheetTitle>
+                <NavLink
+                  className="navlink"
+                  onClick={toggleOpen}
+                  to={"/membership"}
+                >
+                  2. Tesseramento
+                </NavLink>
+              </SheetTitle>
+            </div>
+            <div className="navbar-column">
+              <SheetTitle>
+                <NavLink
+                  className="navlink"
+                  onClick={toggleOpen}
+                  to={"/events"}
+                >
+                  3. Events
+                </NavLink>
+              </SheetTitle>
+              <SheetTitle>
+                <NavLink
+                  className="navlink"
+                  onClick={toggleOpen}
+                  to={"/contact"}
+                >
+                  4. Contact
+                </NavLink>
+              </SheetTitle>
+            </div>
           </div>
-          <div className="navbar-container">
-            <SheetTitle>
-              <NavLink onClick={toggleOpen} to={"/events"}>
-                Events
-              </NavLink>
-            </SheetTitle>
-            <SheetTitle>
-              <NavLink onClick={toggleOpen} to={"/contact"}>
-                Contact
-              </NavLink>
-            </SheetTitle>
-          </div>
-          {/* <div style={{ height: "600px", position: "relative" }}>
-            <FlowingMenu items={demoItems} />
-          </div> */}
-          ;
         </SheetContent>
       </Sheet>
     </div>

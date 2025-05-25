@@ -1,0 +1,25 @@
+.navbar-container {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  justify-content: space-evenly;
+}
+
+.navbar-column {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.navlink {
+  font-size: x-large;
+}
+
+.navlink:hover {
+  color: grey;
+}
+
+.active {
+  color: red;
+}
