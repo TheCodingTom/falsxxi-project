@@ -11,7 +11,8 @@ body {
 
 .dropdown-container {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* LOGO SECTION */
@@ -74,7 +75,10 @@ body {
 }
 
 #c {
-  /* background: pink; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: red;
 }
 
 #d {
