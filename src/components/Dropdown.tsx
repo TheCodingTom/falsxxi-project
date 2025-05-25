@@ -70,6 +70,9 @@ function Dropdown() {
               </SheetTitle>
             </div>
           </div>
+          <div className="outlined-container">
+            <img src={blacklogo} className="outlined" alt="" />
+          </div>
         </SheetContent>
       </Sheet>
     </div>

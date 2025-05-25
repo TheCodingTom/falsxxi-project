@@ -23,3 +23,13 @@
 .active {
   color: red;
 }
+
+.outlined-container {
+  display: flex;
+  justify-content: end;
+}
+
+.outlined {
+  width: 80px;
+  padding: 10px;
+}
