@@ -87,10 +87,11 @@ body {
 }
 
 .pig-logo {
-  height: 250px;
-  width: 250px;
-  padding: 10px;
+  height: 280px;
+  width: 280px;
+  padding: 15px;
   position: absolute;
+  top: 4vh;
 }
 
 .logo-text-container {
@@ -98,10 +99,6 @@ body {
   justify-content: center;
   position: relative;
   text-align: center;
-}
-
-.custom-class {
-  position: absolute;
 }
 
 /* === RESPONSIVE === */

@@ -73,6 +73,9 @@ function Dropdown() {
           <div className="outlined-container">
             <img src={blacklogo} className="outlined" alt="" />
           </div>
+          <SheetDescription className="sr-only">
+            Dropdown menu with 4 nav links
+          </SheetDescription>
         </SheetContent>
       </Sheet>
     </div>
