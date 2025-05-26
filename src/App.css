@@ -86,6 +86,24 @@ body {
   background: rgb(255, 255, 255);
 }
 
+.pig-logo {
+  height: 250px;
+  width: 250px;
+  padding: 10px;
+  position: absolute;
+}
+
+.logo-text-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.custom-class {
+  position: absolute;
+}
+
 /* === RESPONSIVE === */
 @media screen and (max-width: 480px) {
   .main-image {
