@@ -30,7 +30,7 @@ function Dropdown() {
         <SheetTrigger style={{ padding: "20px" }}>
           <TiThMenu onClick={toggleOpen} style={{ fontSize: "x-large" }} />
         </SheetTrigger>
-        <SheetContent style={{ height: "40vh" }}>
+        <SheetContent style={{ height: "30vh" }}>
           <div className="navbar-container">
             <div className="navbar-column">
               <SheetTitle>

@@ -1,11 +1,11 @@
 import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 import "./App.css";
 
-import Test from "./pages/Test";
 import Membership from "./pages/Membership";
 import Events from "./pages/Events";
 import Contact from "./pages/Contact";
 import Dropdown from "./components/Dropdown";
+import Home from "./pages/Home";
 
 const DropdownLayout = () => {
   return (
@@ -22,7 +22,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<DropdownLayout />}>
-            <Route path="/" element={<Test />} />
+            <Route path="/" element={<Home />} />
             <Route path="/membership" element={<Membership />} />
             <Route path="/events" element={<Events />} />
             <Route path="/contact" element={<Contact />} />
