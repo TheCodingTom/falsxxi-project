@@ -30,6 +30,8 @@ body {
   max-width: 40%;
   height: auto;
   object-fit: contain;
+  align-self: flex-end;
+  margin-bottom: 0px;
 }
 
 /* FULL PAGE WRAPPER */
@@ -66,13 +68,15 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+
   z-index: -99;
 }
 
 #b {
-  margin-top: 100vh;
+  margin-top: 99.9vh;
   background: rgb(0, 0, 0);
   color: white;
+  font-size: x-large;
 }
 
 #c {
@@ -87,11 +91,11 @@ body {
 }
 
 .pig-logo {
-  height: 280px;
-  width: 280px;
-  padding: 15px;
+  height: 350px;
+  width: 350px;
+  padding: 20px;
   position: absolute;
-  top: 4vh;
+  top: 5vh;
 }
 
 .logo-text-container {
@@ -99,6 +103,12 @@ body {
   justify-content: center;
   position: relative;
   text-align: center;
+}
+
+.statement {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
 }
 
 /* === RESPONSIVE === */
@@ -116,7 +126,19 @@ body {
     flex-direction: row;
   }
 
+  #b {
+    font-size: medium;
+  }
+
   #c {
     background-position: center;
+  }
+
+  .pig-logo {
+    height: 190px;
+    width: 190px;
+    padding: 15px;
+    position: absolute;
+    top: 4vh;
   }
 }

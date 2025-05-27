@@ -70,9 +70,9 @@ function Dropdown() {
               </SheetTitle>
             </div>
           </div>
-          <div className="outlined-container">
+          {/* <div className="outlined-container">
             <img src={blacklogo} className="outlined" alt="" />
-          </div>
+          </div> */}
           <SheetDescription className="sr-only">
             Dropdown menu with 4 nav links
           </SheetDescription>

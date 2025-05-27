@@ -17,7 +17,7 @@ function Home() {
             <div className="logo-text-container">
               <CircularText
                 text="I RAGAZZI*FALSXXI*"
-                onHover="speedUp"
+                onHover="pause"
                 spinDuration={20}
                 className="custom-class"
               />
