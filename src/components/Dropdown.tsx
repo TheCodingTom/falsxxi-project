@@ -31,6 +31,9 @@ function Dropdown() {
           <TiThMenu onClick={toggleOpen} style={{ fontSize: "x-large" }} />
         </SheetTrigger>
         <SheetContent style={{ height: "30vh" }}>
+          <div className="logo-container">
+            <img src={blacklogo} className="logo" alt="" />
+          </div>
           <div className="navbar-container">
             <div className="navbar-column">
               <SheetTitle>
@@ -70,9 +73,7 @@ function Dropdown() {
               </SheetTitle>
             </div>
           </div>
-          {/* <div className="outlined-container">
-            <img src={blacklogo} className="outlined" alt="" />
-          </div> */}
+
           <SheetDescription className="sr-only">
             Dropdown menu with 4 nav links
           </SheetDescription>

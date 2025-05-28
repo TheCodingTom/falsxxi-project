@@ -1,0 +1,19 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  gap: 20px;
+  align-items: baseline;
+}
+
+.main-text {
+  margin: auto;
+  width: 50vw;
+  border: 2px solid green;
+  padding: 10px;
+}
+
+.form {
+  outline: solid 2px black;
+  background-color: white;
+}
