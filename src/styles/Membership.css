@@ -3,17 +3,21 @@
   flex-direction: row;
   justify-self: center;
   gap: 20px;
-  align-items: baseline;
+  align-items: center;
 }
 
 .main-text {
   margin: auto;
-  width: 50vw;
+  width: 40vw;
   border: 2px solid green;
   padding: 10px;
 }
 
 .form {
+  width: 40vw;
   outline: solid 2px black;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

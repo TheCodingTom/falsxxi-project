@@ -37,27 +37,6 @@ function Membership() {
   }
   return (
     <div className="main-container">
-      <div className="main-text">
-        <h3>
-          Puoi diventare socio falsxxi e supportare il progetto in prima linea.
-          Essere dei nostri non è solo una questione di cuore (anche), ma un
-          modo concreto per far crescere la scena che ci anima. Con la tessera
-          annuale potrai:
-          <ul>
-            <li>- accedere a eventi riservati solo ai soci</li>
-            <li>
-              - partecipare al consiglio di amministrazione di fine anno
-              (spoiler: è più divertente di quello della RAI)
-            </li>
-            <li>
-              - ricevere la maglietta ufficiale di @falsxxi, perché anche
-              l’occhio vuole il suo groove
-            </li>
-          </ul>{" "}
-          La tessera ha durata annuale, valida per tutto l’anno solare. Che
-          aspetti? Vieni a muovere cose con noi.
-        </h3>
-      </div>
       <div>
         <Form {...form}>
           <form
@@ -69,7 +48,7 @@ function Membership() {
               name="username"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Username</FormLabel>
+                  <FormLabel>Nome e cognome</FormLabel>
                   <FormControl>
                     <Input placeholder="Nome" {...field} />
                   </FormControl>
@@ -92,9 +71,32 @@ function Membership() {
                 </FormItem>
               )}
             />
-            <Button type="submit">Submit</Button>
+            <div>
+              <Button type="submit">Richiedi tessera</Button>
+            </div>
           </form>
         </Form>
+      </div>
+      <div className="main-text">
+        <h3>
+          Puoi diventare socio falsxxi e supportare il progetto in prima linea.
+          Essere dei nostri non è solo una questione di cuore (anche), ma un
+          modo concreto per far crescere la scena che ci anima. Con la tessera
+          annuale potrai:
+          <ul>
+            <li>- accedere a eventi riservati solo ai soci</li>
+            <li>
+              - partecipare al consiglio di amministrazione di fine anno
+              (spoiler: è più divertente di quello della RAI)
+            </li>
+            <li>
+              - ricevere la maglietta ufficiale di @falsxxi, perché anche
+              l’occhio vuole il suo groove
+            </li>
+          </ul>{" "}
+          La tessera ha durata annuale, valida per tutto l’anno solare. Che
+          aspetti? Vieni a muovere cose con noi.
+        </h3>
       </div>
     </div>
   );
