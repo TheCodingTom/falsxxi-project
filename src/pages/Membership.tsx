@@ -15,17 +15,21 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { db } from "@/config/firebaseConfig";
 
 function Membership() {
   const formSchema = z.object({
-    username: z.string().min(2).max(50),
+    fullName: z.string().min(5).max(50),
+    email: z.string().email(),
   });
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      fullName: "",
+      email: "",
     },
   });
 
@@ -35,6 +39,16 @@ function Membership() {
     // ✅ This will be type-safe and validated.
     console.log(values);
   }
+
+  const addMemberData = async () => {
+    // Add a new document with a generated id.
+    const docRef = await addDoc(collection(db, "memberships"), {
+      fullName: "Paolo Di Canio",
+      email: "paolinodicanio@test.com",
+    });
+    console.log("Document added with ID: ", docRef.id);
+  };
+
   return (
     <div className="main-container">
       <div>
@@ -45,7 +59,7 @@ function Membership() {
           >
             <FormField
               control={form.control}
-              name="username"
+              name="fullName"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Nome e cognome</FormLabel>
@@ -59,7 +73,7 @@ function Membership() {
             />
             <FormField
               control={form.control}
-              name="username"
+              name="email"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Username</FormLabel>
@@ -72,7 +86,9 @@ function Membership() {
               )}
             />
             <div>
-              <Button type="submit">Richiedi tessera</Button>
+              <Button onClick={addMemberData} type="submit">
+                Richiedi tessera
+              </Button>
             </div>
           </form>
         </Form>

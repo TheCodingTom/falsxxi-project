@@ -6,7 +6,7 @@ import Events from "./pages/Events";
 import Contact from "./pages/Contact";
 import Dropdown from "./components/Dropdown";
 import Home from "./pages/Home";
-import { app } from "./config/firebaseConfig";
+import { app, db } from "./config/firebaseConfig";
 
 const DropdownLayout = () => {
   return (
@@ -19,6 +19,7 @@ const DropdownLayout = () => {
 
 function App() {
   // console.log(app);
+  console.log("db :>> ", db);
   return (
     <>
       <BrowserRouter>
