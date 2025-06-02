@@ -15,38 +15,36 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/config/firebaseConfig";
 
 function Membership() {
   const formSchema = z.object({
     fullName: z.string().min(5).max(50),
     email: z.string().email(),
+    // dateOfBirth: z.date(),
+    fiscalCode: z.string(),
   });
 
-  // 1. Define your form.
+  // 1. Define your form
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       fullName: "",
       email: "",
+      // dateOfBirth: new Date(),
+      fiscalCode: "",
     },
   });
 
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
-  }
-
-  const addMemberData = async () => {
-    // Add a new document with a generated id.
-    const docRef = await addDoc(collection(db, "memberships"), {
-      fullName: "Paolo Di Canio",
-      email: "paolinodicanio@test.com",
-    });
-    console.log("Document added with ID: ", docRef.id);
+  // 2. Define a submit handler
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    try {
+      const docRef = await addDoc(collection(db, "memberships"), values);
+      console.log("Document added with ID: ", docRef.id);
+    } catch (err) {
+      console.error("Error adding document", err);
+    }
   };
 
   return (
@@ -64,7 +62,7 @@ function Membership() {
                 <FormItem>
                   <FormLabel>Nome e cognome</FormLabel>
                   <FormControl>
-                    <Input placeholder="Nome" {...field} />
+                    <Input placeholder="Guglielmo Baffo" {...field} />
                   </FormControl>
 
                   <FormMessage />
@@ -76,9 +74,37 @@ function Membership() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Username</FormLabel>
+                  <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="Email" {...field} />
+                    <Input placeholder="guglielmo.baffo@gmail.com" {...field} />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            {/* <FormField
+              control={form.control}
+              name="dateOfBirth"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Data di nascita</FormLabel>
+                  <FormControl>
+                    <Input placeholder="01.01.1990" {...field} />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            /> */}
+            <FormField
+              control={form.control}
+              name="fiscalCode"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Codice Fiscale</FormLabel>
+                  <FormControl>
+                    <Input placeholder="FDVHQB96E57C577H" {...field} />
                   </FormControl>
 
                   <FormMessage />
@@ -86,9 +112,7 @@ function Membership() {
               )}
             />
             <div>
-              <Button onClick={addMemberData} type="submit">
-                Richiedi tessera
-              </Button>
+              <Button type="submit">Richiedi tessera</Button>
             </div>
           </form>
         </Form>
