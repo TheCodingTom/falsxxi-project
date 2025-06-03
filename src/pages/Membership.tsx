@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -18,30 +17,58 @@ import { Input } from "@/components/ui/input";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/config/firebaseConfig";
 
-function Membership() {
-  const formSchema = z.object({
-    fullName: z.string().min(5).max(50),
-    email: z.string().email(),
-    // dateOfBirth: z.date(),
-    fiscalCode: z.string(),
-  });
+// Schema expects dateOfBirth as a string in "yyyy-MM-dd" format
+const formSchema = z.object({
+  fullName: z
+    .string()
+    .min(5, "Il nome e cognome deve contenere almeno 5 caratteri")
+    .max(50, "Il nome e cognome non può superare i 50 caratteri"),
+  email: z.string().email("Inserisci un indirizzo email valido"),
+  dateOfBirth: z
+    .string()
+    .nonempty("La data è obbligatoria")
+    .refine((dateStr) => {
+      const birthDate = new Date(dateStr);
+      if (isNaN(birthDate.getTime())) return false;
+      const today = new Date();
+      const age = today.getFullYear() - birthDate.getFullYear();
+      const m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        return age - 1 >= 18;
+      }
+      return age >= 18;
+    }, "Devi avere almeno 18 anni"),
+  fiscalCode: z
+    .string()
+    .regex(
+      /^[A-Z0-9]{16}$/,
+      "Il codice fiscale deve avere 16 caratteri alfanumerici"
+    ),
+});
 
-  // 1. Define your form
-  const form = useForm<z.infer<typeof formSchema>>({
+type MembershipFormValues = z.infer<typeof formSchema>;
+
+function Membership() {
+  const form = useForm<MembershipFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       fullName: "",
       email: "",
-      // dateOfBirth: new Date(),
+      dateOfBirth: new Date().toISOString().split("T")[0], // formatted "yyyy-MM-dd"
       fiscalCode: "",
     },
   });
 
-  // 2. Define a submit handler
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: MembershipFormValues) => {
     try {
-      const docRef = await addDoc(collection(db, "memberships"), values);
+      // Convert dateOfBirth string to Date before saving if needed
+      const dataToSave = {
+        ...values,
+        dateOfBirth: new Date(values.dateOfBirth),
+      };
+      const docRef = await addDoc(collection(db, "memberships"), dataToSave);
       console.log("Document added with ID: ", docRef.id);
+      form.reset();
     } catch (err) {
       console.error("Error adding document", err);
     }
@@ -64,11 +91,11 @@ function Membership() {
                   <FormControl>
                     <Input placeholder="Guglielmo Baffo" {...field} />
                   </FormControl>
-
                   <FormMessage />
                 </FormItem>
               )}
             />
+
             <FormField
               control={form.control}
               name="email"
@@ -78,25 +105,26 @@ function Membership() {
                   <FormControl>
                     <Input placeholder="guglielmo.baffo@gmail.com" {...field} />
                   </FormControl>
-
                   <FormMessage />
                 </FormItem>
               )}
             />
-            {/* <FormField
+
+            <FormField
               control={form.control}
               name="dateOfBirth"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Data di nascita</FormLabel>
                   <FormControl>
-                    <Input placeholder="01.01.1990" {...field} />
+                    {/* Now field.value is a string "yyyy-MM-dd" */}
+                    <Input type="date" {...field} />
                   </FormControl>
-
                   <FormMessage />
                 </FormItem>
               )}
-            /> */}
+            />
+
             <FormField
               control={form.control}
               name="fiscalCode"
@@ -106,17 +134,18 @@ function Membership() {
                   <FormControl>
                     <Input placeholder="FDVHQB96E57C577H" {...field} />
                   </FormControl>
-
                   <FormMessage />
                 </FormItem>
               )}
             />
+
             <div>
               <Button type="submit">Richiedi tessera</Button>
             </div>
           </form>
         </Form>
       </div>
+
       <div className="main-text">
         <h3>
           Puoi diventare socio falsxxi e supportare il progetto in prima linea.
@@ -133,7 +162,7 @@ function Membership() {
               - ricevere la maglietta ufficiale di @falsxxi, perché anche
               l’occhio vuole il suo groove
             </li>
-          </ul>{" "}
+          </ul>
           La tessera ha durata annuale, valida per tutto l’anno solare. Che
           aspetti? Vieni a muovere cose con noi.
         </h3>
