@@ -22,8 +22,8 @@ import { toast, ToastContainer } from "react-toastify";
 const formSchema = z.object({
   fullName: z
     .string()
-    .min(5, "Il nome e cognome deve contenere almeno 5 caratteri")
-    .max(50, "Il nome e cognome non può superare i 50 caratteri"),
+    .min(5, "Questo campo deve contenere almeno 5 caratteri")
+    .max(50, "Questo campo non può superare i 50 caratteri"),
   email: z.string().email("Inserisci un indirizzo email valido"),
   dateOfBirth: z
     .string()
@@ -148,7 +148,7 @@ function Membership() {
               )}
             />
 
-            <div>
+            <div className="flex flex-row justify-center">
               <Button type="submit">Richiedi tessera</Button>
             </div>
           </form>
@@ -156,25 +156,28 @@ function Membership() {
       </div>
 
       <div className="main-text">
-        <h3>
+        <h2>Perché richiedere la tessera?</h2>
+        <p>
           Puoi diventare socio falsxxi e supportare il progetto in prima linea.
           Essere dei nostri non è solo una questione di cuore (anche), ma un
           modo concreto per far crescere la scena che ci anima. Con la tessera
           annuale potrai:
-          <ul>
-            <li>- accedere a eventi riservati solo ai soci</li>
-            <li>
-              - partecipare al consiglio di amministrazione di fine anno
-              (spoiler: è più divertente di quello della RAI)
-            </li>
-            <li>
-              - ricevere la maglietta ufficiale di @falsxxi, perché anche
-              l’occhio vuole il suo groove
-            </li>
-          </ul>
+        </p>
+        <ul>
+          <li>- accedere a eventi riservati solo ai soci</li>
+          <li>
+            - partecipare al consiglio di amministrazione di fine anno (spoiler:
+            è più divertente di quello della RAI)
+          </li>
+          <li>
+            - ricevere la maglietta ufficiale di @falsxxi, perché anche l’occhio
+            vuole il suo groove
+          </li>
+        </ul>
+        <p>
           La tessera ha durata annuale, valida per tutto l’anno solare. Che
           aspetti? Vieni a muovere cose con noi.
-        </h3>
+        </p>
       </div>
       <ToastContainer />
     </div>

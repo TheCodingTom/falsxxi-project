@@ -24,7 +24,9 @@ function Dropdown() {
   return (
     <div className="dropdown-container">
       <div className="logo-container">
-        <img className="main-logo" src={blacklogo} alt="black logo" />
+        <NavLink to={"/"}>
+          <img className="main-logo" src={blacklogo} alt="black logo" />
+        </NavLink>
       </div>
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger style={{ padding: "20px" }}>
