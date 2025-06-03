@@ -16,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/config/firebaseConfig";
+import { toast, ToastContainer } from "react-toastify";
 
 // Schema expects dateOfBirth as a string in "yyyy-MM-dd" format
 const formSchema = z.object({
@@ -68,9 +69,17 @@ function Membership() {
       };
       const docRef = await addDoc(collection(db, "memberships"), dataToSave);
       console.log("Document added with ID: ", docRef.id);
+      toast.success("Richiesta effettuata con successo!", {
+        position: "top-right",
+        autoClose: 3000,
+      });
       form.reset();
     } catch (err) {
       console.error("Error adding document", err);
+      toast.error("La richiesta non è andata a buon fine. Riprova!", {
+        position: "top-right",
+        autoClose: 3000,
+      });
     }
   };
 
@@ -167,6 +176,7 @@ function Membership() {
           aspetti? Vieni a muovere cose con noi.
         </h3>
       </div>
+      <ToastContainer />
     </div>
   );
 }
