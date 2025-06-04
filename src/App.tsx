@@ -19,7 +19,7 @@ const DropdownLayout = () => {
 
 function App() {
   // console.log(app);
-  console.log("db :>> ", db);
+  // console.log("db :>> ", db);
   return (
     <>
       <BrowserRouter>
