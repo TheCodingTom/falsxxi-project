@@ -11,11 +11,14 @@ import React, { useEffect, useState } from "react";
 
 import "../styles/Events.css";
 
+import money from "../images/blackpig.png";
+
 function Events() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
 
   const [eventDates, setEventDates] = useState<Date[]>([]);
   const [eventImage, setEventImage] = useState<string | null>(null);
+  const [eventName, setEventName] = useState<string | null>(null);
 
   const fetchEventsByDate = async (selectedDate: Date) => {
     const start = new Date(selectedDate);
@@ -34,10 +37,12 @@ function Events() {
 
     if (!querySnapshot.empty) {
       const eventData = querySnapshot.docs[0].data();
-
+      console.log(eventData);
       setEventImage(eventData.image);
+      setEventName(eventData.name);
     } else {
       setEventImage(null);
+      setEventName(null);
     }
   };
 
@@ -96,6 +101,9 @@ function Events() {
 
       {eventImage ? (
         <div>
+          <h4>Nome: {eventName} </h4>
+          <h4>Location: </h4>
+          <h4>Data: </h4>
           <img
             className="event-image"
             src={eventImage}
@@ -103,7 +111,10 @@ function Events() {
           />
         </div>
       ) : (
-        <p>Nessun evento per questa data.</p>
+        <div>
+          <img className="event-image" src={money} alt="" />
+          <p>Nessun evento per questa data.</p>
+        </div>
       )}
     </div>
   );
