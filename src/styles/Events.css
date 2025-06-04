@@ -1,0 +1,22 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-image {
+  width: 400px;
+}
+
+.event-highlight {
+  background-color: #f9ec7e;
+
+  border-radius: 20%;
+}
+
+@media screen and (max-width: 480px) {
+  .event-image {
+    width: 200px;
+  }
+}

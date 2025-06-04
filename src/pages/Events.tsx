@@ -9,9 +9,12 @@ import {
 } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 
+import "../styles/Events.css";
+
 function Events() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
 
+  const [eventDates, setEventDates] = useState<Date[]>([]);
   const [eventImage, setEventImage] = useState<string | null>(null);
 
   const fetchEventsByDate = async (selectedDate: Date) => {
@@ -31,11 +34,35 @@ function Events() {
 
     if (!querySnapshot.empty) {
       const eventData = querySnapshot.docs[0].data();
+
       setEventImage(eventData.image);
     } else {
       setEventImage(null);
     }
   };
+
+  const fetchAllEventDates = async () => {
+    const eventsRef = collection(db, "events");
+    // reading all docs in events collection
+    const snapshot = await getDocs(eventsRef);
+
+    const dates: Date[] = [];
+
+    snapshot.forEach((doc) => {
+      const data = doc.data();
+      // firestore method .toDate() converst dates into regular JS Date objects
+      if (data.date && data.date.toDate) {
+        // add dates to array to show them in component
+        dates.push(data.date.toDate());
+      }
+    });
+
+    setEventDates(dates);
+  };
+
+  useEffect(() => {
+    fetchAllEventDates();
+  }, []);
 
   useEffect(() => {
     if (date) {
@@ -44,10 +71,12 @@ function Events() {
   }, [date]);
 
   return (
-    <div>
+    <div className="main-container">
       <p>
         I nostri eventi non sono solo feste: sono rituali collettivi, balli
-        liberatori, esperimenti sonori ad alta quota e non solo...
+        liberatori, esperimenti sonori ad alta quota e non solo. Che sia in un
+        rifugio alpino, in un club cittadino o in qualche luogo che non possiamo
+        spoilerare troppo presto, portiamo musica che scalda, connette e smuove.
       </p>
       <div className="flex flex-col flex-wrap items-center gap-2 @md:flex-row">
         <Calendar
@@ -55,12 +84,20 @@ function Events() {
           selected={date}
           onSelect={setDate}
           className="rounded-md border shadow-sm bg-white"
+          // applying hasEvent modifier to any date that matches one of the eventDates and applying a class to it
+          modifiers={{
+            hasEvent: eventDates,
+          }}
+          modifiersClassNames={{
+            hasEvent: "event-highlight",
+          }}
         />
       </div>
+
       {eventImage ? (
         <div>
           <img
-            style={{ width: "300px" }}
+            className="event-image"
             src={eventImage}
             alt="locandina evento"
           />
