@@ -19,6 +19,8 @@ function Events() {
   const [eventDates, setEventDates] = useState<Date[]>([]);
   const [eventImage, setEventImage] = useState<string | null>(null);
   const [eventName, setEventName] = useState<string | null>(null);
+  const [eventLocation, setEventLocation] = useState<string | null>(null);
+  const [eventDate, setEventDate] = useState<string | null>(null);
 
   const fetchEventsByDate = async (selectedDate: Date) => {
     const start = new Date(selectedDate);
@@ -40,9 +42,22 @@ function Events() {
       console.log(eventData);
       setEventImage(eventData.image);
       setEventName(eventData.name);
+      setEventLocation(eventData.location);
+
+      // const timestamp = eventData.date.seconds.toDate().toLocaleString();
+      // console.log(timestamp);
+
+      const firebaseDate = new Date(
+        eventData.date.seconds * 1000 + eventData.date.nanoseconds / 1000000
+      );
+      const date = firebaseDate.toLocaleDateString();
+      setEventDate(date);
+      // const date = new Date(timestamp);
+      // console.log(date.toLocaleDateString());
     } else {
       setEventImage(null);
       setEventName(null);
+      setEventLocation(null);
     }
   };
 
@@ -102,8 +117,8 @@ function Events() {
       {eventImage ? (
         <div>
           <h4>Nome: {eventName} </h4>
-          <h4>Location: </h4>
-          <h4>Data: </h4>
+          <h4>Location: {eventLocation} </h4>
+          <h4>Data: {eventDate} </h4>
           <img
             className="event-image"
             src={eventImage}
