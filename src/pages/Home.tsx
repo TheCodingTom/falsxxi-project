@@ -28,16 +28,18 @@ function Home() {
               />
             </div>
 
-            <p>
-              falsxxi è un collettivo nato nel 2022 con la promessa di animare
-              le Alpi sondriesi. Un esperimento sonoro e culturale che ha preso
-              forma tra le montagne, ma che nel tempo ha trovato casa anche ad
-              altre latitudini. Portiamo in console selezioni che spingono i
-              ritmi più caldi, dal funky italiano alle pulsazioni elettroniche
-              dell’est Europa, attraversando i generi senza perdere mai di vista
-              la pista. Perché si può esplorare, mischiare, osare. Ma si balla
-              sempre.
-            </p>
+            <div className="box">
+              <p>
+                falsxxi è un collettivo nato nel 2022 con la promessa di animare
+                le Alpi sondriesi. Un esperimento sonoro e culturale che ha
+                preso forma tra le montagne, ma che nel tempo ha trovato casa
+                anche ad altre latitudini. Portiamo in console selezioni che
+                spingono i ritmi più caldi, dal funky italiano alle pulsazioni
+                elettroniche dell’est Europa, attraversando i generi senza
+                perdere mai di vista la pista. Perché si può esplorare,
+                mischiare, osare. Ma si balla sempre.
+              </p>
+            </div>
           </div>
         </div>
 
