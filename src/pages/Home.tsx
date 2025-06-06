@@ -52,9 +52,22 @@ function Home() {
         >
           <img className="main-logo" src={whitelogo} alt="black logo" />
         </div>
-        <div id="d" className="panels">
-          Scrolling-Panel 3
-        </div>
+        <footer
+          className="footer"
+          style={{
+            backgroundColor: "black",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            padding: "2rem",
+            color: "white",
+            textAlign: "center",
+          }}
+        >
+          <p>
+            &copy; {new Date().getFullYear()} FALSXXI. Tutti i diritti
+            riservati.
+          </p>
+        </footer>
       </div>
     </>
   );

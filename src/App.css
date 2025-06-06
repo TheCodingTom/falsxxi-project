@@ -111,6 +111,16 @@ body {
   gap: 5vh;
 }
 
+.footer {
+  width: 100%;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-blend-mode: multiply;
+  bottom: 0px;
+}
+
 /* animation test */
 
 .box {
@@ -162,5 +172,14 @@ body {
     padding: 15px;
     position: absolute;
     top: 4vh;
+  }
+
+  .box {
+    margin: auto;
+    width: 90vw;
+    padding: 10px;
+    font-size: large;
+    text-align: center;
+    font-weight: 600;
   }
 }
