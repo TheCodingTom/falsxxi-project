@@ -15,8 +15,44 @@
   border-radius: 20%;
 }
 
+/* .event-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+} */
+
 @media screen and (max-width: 480px) {
   .event-image {
-    width: 200px;
+    width: 40vw;
+  }
+
+  .event-information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: large;
+    font-weight: 500;
+  }
+
+  .main-text-events {
+    margin: auto;
+    width: 90vw;
+    padding: 10px;
+    font-size: large;
+    text-align: center;
+    animation: fadeIn 1.2s ease-in;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

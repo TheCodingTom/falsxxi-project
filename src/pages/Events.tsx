@@ -44,20 +44,14 @@ function Events() {
       setEventName(eventData.name);
       setEventLocation(eventData.location);
 
-      // const timestamp = eventData.date.seconds.toDate().toLocaleString();
-      // console.log(timestamp);
-
-      const firebaseDate = new Date(
-        eventData.date.seconds * 1000 + eventData.date.nanoseconds / 1000000
-      );
-      const date = firebaseDate.toLocaleDateString();
-      setEventDate(date);
-      // const date = new Date(timestamp);
-      // console.log(date.toLocaleDateString());
+      const firebaseDate = new Date(eventData.date.seconds * 1000);
+      const formattedDate = firebaseDate.toLocaleDateString();
+      setEventDate(formattedDate);
     } else {
       setEventImage(null);
       setEventName(null);
       setEventLocation(null);
+      setEventDate(null);
     }
   };
 
@@ -92,41 +86,46 @@ function Events() {
 
   return (
     <div className="main-container">
-      <p>
-        I nostri eventi non sono solo feste: sono rituali collettivi, balli
-        liberatori, esperimenti sonori ad alta quota e non solo. Che sia in un
-        rifugio alpino, in un club cittadino o in qualche luogo che non possiamo
-        spoilerare troppo presto, portiamo musica che scalda, connette e smuove.
-      </p>
+      <div className="main-text-events">
+        <p>
+          I nostri eventi non sono solo feste: sono rituali collettivi, balli
+          liberatori, esperimenti sonori ad alta quota e non solo. Che sia in un
+          rifugio alpino, in un club cittadino o in qualche luogo che non
+          possiamo spoilerare troppo presto, portiamo musica che scalda,
+          connette e smuove.
+        </p>
+      </div>
       <div className="flex flex-col flex-wrap items-center gap-2 @md:flex-row">
-        <Calendar
-          mode="single"
-          selected={date}
-          onSelect={setDate}
-          className="rounded-md border shadow-sm bg-white"
-          // applying hasEvent modifier to any date that matches one of the eventDates and applying a class to it
-          modifiers={{
-            hasEvent: eventDates,
-          }}
-          modifiersClassNames={{
-            hasEvent: "event-highlight",
-          }}
-        />
+        <div className="calendar-wrapper">
+          <Calendar
+            mode="single"
+            selected={date}
+            onSelect={setDate}
+            className="rounded-md border shadow-sm bg-white "
+            // applying hasEvent modifier to any date that matches one of the eventDates and applying a class to it
+            modifiers={{
+              hasEvent: eventDates,
+            }}
+            modifiersClassNames={{
+              hasEvent: "event-highlight",
+            }}
+          />
+        </div>
       </div>
 
       {eventImage ? (
-        <div>
-          <h4>Nome: {eventName} </h4>
-          <h4>Location: {eventLocation} </h4>
-          <h4>Data: {eventDate} </h4>
+        <div className="event-information">
           <img
             className="event-image"
             src={eventImage}
             alt="locandina evento"
           />
+          <p>Nome: {eventName} </p>
+          <p>Location: {eventLocation} </p>
+          <p>Data: {eventDate} </p>
         </div>
       ) : (
-        <div>
+        <div className="event-information">
           <img className="event-image" src={money} alt="" />
           <p>Nessun evento per questa data.</p>
         </div>
