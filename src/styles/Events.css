@@ -1,8 +1,10 @@
-.main-container {
+.event-main-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-self: center;
+  gap: 40px;
   align-items: center;
+  margin-top: 4vh;
 }
 
 .event-image {
