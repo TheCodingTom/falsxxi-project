@@ -9,10 +9,9 @@ body {
   font-family: "Oswald", sans-serif;
 }
 
-.dropdown-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+body,
+html {
+  overscroll-behavior: none;
 }
 
 /* LOGO SECTION */

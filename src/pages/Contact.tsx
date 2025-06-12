@@ -29,16 +29,25 @@ function Contact() {
         </div>
       </div>
 
-      {/* Social Media */}
       <div className="info-card">
         <h2 className="section-title">Follow Us</h2>
         <div className="social-grid">
-          <a href="#" className="social-link">
+          <a
+            href="https://www.instagram.com/falsxxi/"
+            className="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <TiSocialInstagram className="icon" />
             <span className="social-text">Instagram</span>
           </a>
 
-          <a href="#" className="social-link">
+          <a
+            href="https://open.spotify.com/playlist/3wpQSq2M0mQyEGltgPjXuG?si=5e4dd7115c7e466f"
+            className="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Music className="icon" />
             <span className="social-text">Spotify</span>
           </a>
