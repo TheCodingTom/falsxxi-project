@@ -6,12 +6,14 @@ import Events from "./pages/Events";
 import Contact from "./pages/Contact";
 import Dropdown from "./components/Dropdown";
 import Home from "./pages/Home";
+import Footer from "./components/Footer";
 
 const DropdownLayout = () => {
   return (
     <>
       <Dropdown />
       <Outlet />
+      <Footer />
     </>
   );
 };

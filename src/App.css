@@ -35,8 +35,6 @@ html {
 
 /* FULL PAGE WRAPPER */
 #wrapper {
-  position: absolute;
-  height: 100%;
   width: 100%;
 }
 
@@ -86,10 +84,6 @@ html {
   background-color: red;
 }
 
-#d {
-  background: rgb(255, 255, 255);
-}
-
 .pig-logo {
   height: 350px;
   width: 350px;
@@ -117,8 +111,6 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-blend-mode: multiply;
-  bottom: 0px;
 }
 
 /* animation test */

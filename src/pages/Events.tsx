@@ -14,6 +14,7 @@ import {
 
 import "../styles/Events.css";
 import money from "../images/blackpig.png";
+import Footer from "@/components/Footer";
 
 function Events() {
   const [date, setDate] = useState<Date | undefined>(new Date());

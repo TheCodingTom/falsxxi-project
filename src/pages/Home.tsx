@@ -3,6 +3,7 @@ import background from "../images/flames.jpg";
 import whitelogo from "../images/whitelogo.png";
 import CircularText from "@/components/CircularText";
 import pig from "../images/whitepig.png";
+import Footer from "@/components/Footer";
 
 function Home() {
   return (
@@ -58,22 +59,6 @@ function Home() {
             <img className="main-logo" src={whitelogo} alt="black logo" />
           </div>
         </main>
-        <footer
-          className="footer"
-          style={{
-            backgroundColor: "black",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            padding: "2rem",
-            color: "white",
-            textAlign: "center",
-          }}
-        >
-          <p>
-            &copy; {new Date().getFullYear()} FALSXXI. Tutti i diritti
-            riservati.
-          </p>
-        </footer>
       </div>
     </>
   );

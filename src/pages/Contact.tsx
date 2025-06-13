@@ -2,6 +2,7 @@ import { Mail, MapPin, Music } from "lucide-react";
 
 import "../styles/Contact.css";
 import { TiSocialInstagram } from "react-icons/ti";
+import Footer from "@/components/Footer";
 
 function Contact() {
   return (
