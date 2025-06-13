@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { DayPicker } from "react-day-picker";
+import { it } from "date-fns/locale";
 import "react-day-picker/dist/style.css";
 
 import { db } from "@/config/firebaseConfig";
@@ -95,6 +96,7 @@ function Events() {
 
       <div className="flex flex-col flex-wrap items-center gap-2 @md:flex-row">
         <DayPicker
+          locale={it}
           mode="single"
           selected={date}
           onSelect={setDate}

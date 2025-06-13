@@ -16,6 +16,11 @@
   color: black !important;
 }
 
+/* calendar month */
+.rdp-caption_label {
+  padding: 10px;
+}
+
 /* .event-information {
   display: flex;
   flex-direction: column;
