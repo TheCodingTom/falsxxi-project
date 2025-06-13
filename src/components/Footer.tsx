@@ -12,7 +12,7 @@ function Footer() {
       }}
     >
       <p>
-        &copy; {new Date().getFullYear()} FALSXXI. Tutti i diritti riservati.
+        &copy; {new Date().getFullYear()} falsxxi. Tutti i diritti riservati.
       </p>
     </footer>
   );

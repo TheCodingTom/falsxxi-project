@@ -119,7 +119,7 @@ function Events() {
           />
         </div>
       ) : (
-        <div>
+        <div className="event-information">
           <img className="event-image" src={money} alt="" />
           <p>Nessun evento per questa data.</p>
         </div>
