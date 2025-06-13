@@ -11,9 +11,9 @@
 }
 
 .event-highlight {
-  background-color: #f9ec7e;
-
-  border-radius: 20%;
+  background-color: #f7de7c !important; /* yellow-400 */
+  border-radius: 50%;
+  color: black !important;
 }
 
 /* .event-information {
