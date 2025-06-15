@@ -32,7 +32,7 @@ function Dropdown() {
         <SheetTrigger style={{ padding: "20px" }}>
           <TiThMenu onClick={toggleOpen} style={{ fontSize: "x-large" }} />
         </SheetTrigger>
-        <SheetContent style={{ height: "30vh" }}>
+        <SheetContent className="dropdown-size">
           <div className="logo-container">
             <img src={blacklogo} className="logo" alt="" />
           </div>
