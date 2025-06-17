@@ -87,8 +87,7 @@ html {
 
 #b {
   margin-top: 99.9vh;
-  background: rgb(0, 0, 0);
-
+  background: #222a30;
   color: white;
   font-size: x-large;
 }
@@ -102,7 +101,6 @@ html {
 
 .pig-logo {
   height: 350px;
-  width: 350px;
   padding: 20px;
   position: absolute;
   top: 5vh;
@@ -143,6 +141,12 @@ html {
 
   animation-timeline: view();
   animation-range: entry 0% cover 50%;
+
+  margin: auto;
+  width: 90vw;
+  padding: 10px;
+  font-size: large;
+  text-align: center;
 }
 
 @keyframes fadeIn {

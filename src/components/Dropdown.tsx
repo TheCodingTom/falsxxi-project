@@ -1,9 +1,7 @@
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetDescription,
-  SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";

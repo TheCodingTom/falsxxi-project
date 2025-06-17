@@ -7,6 +7,7 @@ import Contact from "./pages/Contact";
 import Dropdown from "./components/Dropdown";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 const DropdownLayout = () => {
   return (
@@ -24,6 +25,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route element={<DropdownLayout />}>
             <Route path="/" element={<Home />} />
