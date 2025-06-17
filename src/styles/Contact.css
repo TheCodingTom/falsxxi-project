@@ -45,6 +45,7 @@
   height: 1.5rem;
   color: #000000;
   margin-top: 0.25rem;
+  color: white;
 }
 
 .item-title {
@@ -76,12 +77,11 @@
   border-radius: 0.5rem;
   transition: background 0.3s;
   text-decoration: none;
-  color: inherit;
+  color: white;
 }
 
 .social-link:hover {
   background: rgba(0, 0, 0, 0.5);
-  color: white;
 }
 
 .social-link:hover .icon {

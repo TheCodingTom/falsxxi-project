@@ -42,7 +42,7 @@ html {
 }
 
 .main-image {
-  max-width: 40%;
+  max-width: 34rem;
   height: auto;
   object-fit: contain;
   align-self: flex-end;
@@ -122,10 +122,22 @@ html {
 .footer {
   width: 100%;
   min-height: 150px;
-
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 0.9em;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  margin: 4px 0;
+  font-size: 0.9rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-link:hover {
+  color: gray;
 }
 
 /* animation test */

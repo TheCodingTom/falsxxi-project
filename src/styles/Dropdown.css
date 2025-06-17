@@ -23,6 +23,7 @@
   font-size: 1.5rem;
   text-decoration: none;
   color: black;
+  transition: color 0.2s ease-in-out;
 }
 
 .navlink:hover {

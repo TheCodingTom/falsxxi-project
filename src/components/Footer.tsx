@@ -5,21 +5,20 @@ function Footer() {
     <footer
       className="footer"
       style={{
-        backgroundColor: "black",
+        backgroundColor: "#222a30",
         backgroundSize: "cover",
         backgroundPosition: "center",
         padding: "2rem",
         color: "white",
         display: "flex",
         justifyContent: "space-between",
-        alignItems: "flex-start",
+        alignItems: "center",
       }}
     >
       <p>
         &copy; {new Date().getFullYear()} falsxxi. Tutti i diritti riservati.
       </p>
 
-      {/* Right-side vertical navbar */}
       <div
         className="footer-navbar"
         style={{
@@ -29,16 +28,16 @@ function Footer() {
         }}
       >
         <NavLink className="footer-link" to="/">
-          1. Statement
+          Statement
         </NavLink>
         <NavLink className="footer-link" to="/membership">
-          2. Tesseramento
+          Tesseramento
         </NavLink>
         <NavLink className="footer-link" to="/events">
-          3. Events
+          Events
         </NavLink>
         <NavLink className="footer-link" to="/contact">
-          4. Contact
+          Contact
         </NavLink>
       </div>
     </footer>
