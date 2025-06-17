@@ -10,11 +10,13 @@ import Footer from "./components/Footer";
 
 const DropdownLayout = () => {
   return (
-    <>
+    <div className="page-wrapper">
       <Dropdown />
-      <Outlet />
+      <main className="page-content">
+        <Outlet />
+      </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

@@ -1,3 +1,19 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-content {
+  flex: 1;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -108,6 +124,7 @@ html {
 .footer {
   width: 100%;
   min-height: 150px;
+
   display: flex;
   align-items: center;
   justify-content: center;

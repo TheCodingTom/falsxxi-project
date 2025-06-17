@@ -3,7 +3,6 @@ import background from "../images/flames.jpg";
 import whitelogo from "../images/whitelogo.png";
 import CircularText from "@/components/CircularText";
 import pig from "../images/whitepig.png";
-import Footer from "@/components/Footer";
 
 function Home() {
   return (
