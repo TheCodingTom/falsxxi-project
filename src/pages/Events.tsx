@@ -94,35 +94,41 @@ function Events() {
         spoilerare troppo presto, portiamo musica che scalda, connette e smuove.
       </p>
 
-      <div className="flex flex-col flex-wrap items-center gap-2 @md:flex-row">
-        <DayPicker
-          locale={it}
-          mode="single"
-          selected={date}
-          onSelect={setDate}
-          modifiers={{ hasEvent: eventDates }}
-          modifiersClassNames={{ hasEvent: "event-highlight" }}
-          className="rounded-md border shadow-sm bg-white p-4"
-        />
-      </div>
-
-      {eventImage ? (
-        <div className="event-information">
-          <h4>Nome: {eventName} </h4>
-          <h4>Location: {eventLocation} </h4>
-          <h4>Data: {eventDate} </h4>
-          <img
-            className="event-image"
-            src={eventImage}
-            alt="locandina evento"
+      <div className="calendar-container">
+        <div className="flex flex-col flex-wrap items-center gap-2 @md:flex-row">
+          <DayPicker
+            locale={it}
+            mode="single"
+            selected={date}
+            onSelect={setDate}
+            modifiers={{ hasEvent: eventDates }}
+            modifiersClassNames={{ hasEvent: "event-highlight" }}
+            className="rounded-md border shadow-sm bg-white p-4"
           />
         </div>
-      ) : (
-        <div className="event-information">
-          <img className="event-image" src={money} alt="" />
-          <p>Nessun evento per questa data.</p>
-        </div>
-      )}
+
+        {eventImage ? (
+          <div className="event-information">
+            <div className="text-center">
+              <h4>Nome: {eventName} </h4>
+              <h4>Location: {eventLocation} </h4>
+              <h4>Data: {eventDate} </h4>
+            </div>
+            <div>
+              <img
+                className="event-image"
+                src={eventImage}
+                alt="locandina evento"
+              />
+            </div>
+          </div>
+        ) : (
+          <div className="event-information">
+            <img className="event-image" src={money} alt="" />
+            <p>Nessun evento per questa data.</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

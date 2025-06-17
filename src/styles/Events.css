@@ -6,8 +6,33 @@
   align-items: center;
 }
 
+.calendar-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  align-items: center;
+}
+
+.main-text-events {
+  margin: auto;
+  width: 90vw;
+  padding: 10px;
+  font-size: large;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in;
+}
+
 .event-image {
-  width: 400px;
+  width: 200px;
+}
+
+.event-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .event-highlight {
@@ -21,11 +46,12 @@
   padding: 10px;
 }
 
-.event-information {
-  margin-bottom: 3vh;
-}
-
 @media screen and (max-width: 480px) {
+  .calendar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
   .event-image {
     width: 40vw;
   }
@@ -37,15 +63,6 @@
     gap: 1vh;
     font-size: large;
     font-weight: 500;
-  }
-
-  .main-text-events {
-    margin: auto;
-    width: 90vw;
-    padding: 10px;
-    font-size: large;
-    text-align: center;
-    animation: fadeIn 1.2s ease-in;
   }
 }
 
