@@ -1,5 +1,7 @@
 import guy from "../images/guy.png";
-import background from "../images/flames.jpg";
+
+import hotel from "../images/hotel.jpg";
+
 import whitelogo from "../images/whitelogo.png";
 import CircularText from "@/components/CircularText";
 import pig from "../images/whitepig.png";
@@ -52,7 +54,7 @@ function Home() {
             id="c"
             className="panels"
             style={{
-              backgroundImage: `url(${background})`,
+              backgroundImage: `url(${hotel})`,
             }}
           >
             <img className="main-logo" src={whitelogo} alt="black logo" />
