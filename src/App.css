@@ -87,7 +87,7 @@ html {
 
 #b {
   margin-top: 99.9vh;
-  background: #222a30;
+  background: #161616;
   color: white;
   font-size: x-large;
 }
@@ -96,7 +96,6 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: red;
 }
 
 .pig-logo {

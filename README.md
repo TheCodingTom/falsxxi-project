@@ -1,54 +1,31 @@
-# React + TypeScript + Vite
+# falsxxi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**falsxxi** is a collective that curates music and cultural events across Europe. Founded in 2022 in the Sondrio Alps, its spirit now lives in clubs and venues far beyond the mountains.
+This website lets users apply for membership by filling out a simple form, and browse upcoming falsxxi events and locations. All data (members and events) is managed through Firebase, making it easy for the team to handle everything independently going forward.
 
-Currently, two official plugins are available:
+## 🛠 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This web application is built with:
 
-## Expanding the ESLint configuration
+- **React** – UI development
+- **Vite** – Fast dev/build tool
+- **TypeScript** – Static typing
+- **shadcn/ui** – Accessible and elegant UI components
+- **Firebase** – Backend and real-time database
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Getting Started
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Prerequisites
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Node.js (v18+)
+- npm or yarn
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Installation
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+git clone https://github.com/yourusername/falsxxi.git
+cd falsxxi
+npm install
+
+# or
+
+yarn install
