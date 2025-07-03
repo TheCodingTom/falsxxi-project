@@ -4,6 +4,7 @@
   justify-self: center;
   gap: 40px;
   align-items: center;
+  margin-bottom: 2rem;
 }
 
 .calendar-container {
